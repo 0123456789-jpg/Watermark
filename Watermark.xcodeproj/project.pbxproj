@@ -10,8 +10,8 @@
 		631AA1882722F639006A89C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA1872722F639006A89C8 /* AppDelegate.m */; };
 		631AA18B2722F639006A89C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA18A2722F639006A89C8 /* ViewController.m */; };
 		631AA18D2722F639006A89C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631AA18C2722F639006A89C8 /* Assets.xcassets */; };
-		631AA1902722F639006A89C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631AA18E2722F639006A89C8 /* Main.storyboard */; };
 		631AA1932722F639006A89C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA1922722F639006A89C8 /* main.m */; };
+		636931F12724376E00F11312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636931F02724376D00F11312 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +21,10 @@
 		631AA1892722F639006A89C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		631AA18A2722F639006A89C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		631AA18C2722F639006A89C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		631AA18F2722F639006A89C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		631AA1912722F639006A89C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631AA1922722F639006A89C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631AA1942722F639006A89C8 /* Watermark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watermark.entitlements; sourceTree = "<group>"; };
+		636931F02724376D00F11312 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				631AA1892722F639006A89C8 /* ViewController.h */,
 				631AA18A2722F639006A89C8 /* ViewController.m */,
 				631AA18C2722F639006A89C8 /* Assets.xcassets */,
-				631AA18E2722F639006A89C8 /* Main.storyboard */,
+				636931F02724376D00F11312 /* Main.storyboard */,
 				631AA1912722F639006A89C8 /* Info.plist */,
 				631AA1922722F639006A89C8 /* main.m */,
 				631AA1942722F639006A89C8 /* Watermark.entitlements */,
@@ -127,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631AA18D2722F639006A89C8 /* Assets.xcassets in Resources */,
-				631AA1902722F639006A89C8 /* Main.storyboard in Resources */,
+				636931F12724376E00F11312 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,17 +145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		631AA18E2722F639006A89C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				631AA18F2722F639006A89C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		631AA1952722F639006A89C8 /* Debug */ = {
@@ -209,7 +198,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -262,7 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -284,6 +273,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -304,6 +294,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
