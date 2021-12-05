@@ -731,7 +731,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="button" id="Smy-SP-Yna"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNV-Io-7p8">
-                                <rect key="frame" x="268" y="81" width="195" height="132"/>
+                                <rect key="frame" x="267" y="81" width="196" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="button" id="xJh-LG-Rpg"/>
                             </imageView>
@@ -756,13 +756,26 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dp-O2-aSh">
+                                <rect key="frame" x="18" y="17" width="70" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="qfW-nr-wi1">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="C"/>
+                                        <segment label="Swift" selected="YES" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="generate" destination="Fk3-cg-CnH" id="Enb-Gh-m03"/>
                         <outlet property="picture" destination="e1d-Fl-D5E" id="QG9-9h-qWd"/>
                         <outlet property="pictureView" destination="hjw-0o-OXg" id="IzN-kT-XUN"/>
+                        <outlet property="renderer" destination="4dp-O2-aSh" id="Zbh-ni-WTm"/>
                         <outlet property="resultView" destination="fNV-Io-7p8" id="I37-b2-BLc"/>
+                        <outlet property="save" destination="V4W-pE-Jiu" id="SK8-Vb-yIa"/>
                         <outlet property="watermark" destination="cpx-rk-li0" id="7w8-MJ-1jJ"/>
                         <outlet property="watermarkView" destination="m6l-e8-PYx" id="yS9-hV-NKK"/>
                     </connections>

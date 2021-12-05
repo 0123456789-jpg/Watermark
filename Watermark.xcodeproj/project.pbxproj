@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63189D50275A414500CBCE2A /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63189D4F275A414500CBCE2A /* Generator.swift */; };
 		631AA1882722F639006A89C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA1872722F639006A89C8 /* AppDelegate.m */; };
 		631AA18B2722F639006A89C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA18A2722F639006A89C8 /* ViewController.m */; };
 		631AA18D2722F639006A89C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631AA18C2722F639006A89C8 /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63189D4E275A414500CBCE2A /* Watermark-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Watermark-Bridging-Header.h"; sourceTree = "<group>"; };
+		63189D4F275A414500CBCE2A /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		631AA1832722F639006A89C8 /* Watermark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watermark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		631AA1862722F639006A89C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		631AA1872722F639006A89C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,11 +64,13 @@
 				631AA1872722F639006A89C8 /* AppDelegate.m */,
 				631AA1892722F639006A89C8 /* ViewController.h */,
 				631AA18A2722F639006A89C8 /* ViewController.m */,
+				63189D4F275A414500CBCE2A /* Generator.swift */,
 				631AA18C2722F639006A89C8 /* Assets.xcassets */,
 				636931F02724376D00F11312 /* Main.storyboard */,
 				631AA1912722F639006A89C8 /* Info.plist */,
 				631AA1922722F639006A89C8 /* main.m */,
 				631AA1942722F639006A89C8 /* Watermark.entitlements */,
+				63189D4E275A414500CBCE2A /* Watermark-Bridging-Header.h */,
 			);
 			path = Watermark;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				TargetAttributes = {
 					631AA1822722F639006A89C8 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -139,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631AA18B2722F639006A89C8 /* ViewController.m in Sources */,
+				63189D50275A414500CBCE2A /* Generator.swift in Sources */,
 				631AA1932722F639006A89C8 /* main.m in Sources */,
 				631AA1882722F639006A89C8 /* AppDelegate.m in Sources */,
 			);
@@ -263,6 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Watermark/Watermark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -276,6 +284,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Watermark/Watermark-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -284,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Watermark/Watermark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -297,6 +309,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Watermark/Watermark-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
