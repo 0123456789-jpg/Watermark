@@ -8,10 +8,6 @@
 #import "ViewController.h"
 #import "Watermark-Swift.h"
 
-NSImage *PICTURE = nil;
-NSImage *WATERMARK = nil;
-NSImage *RESULT = nil;
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -54,13 +50,11 @@ NSImage *RESULT = nil;
     ViewController *c = [ViewController new];
     NSImage *image = [c getFile];
     [_pictureView setImage:image];
-    PICTURE = image;
 }
 -(void)displayWatermark{
     ViewController *c = [ViewController new];
     NSImage *image = [c getFile];
     [_watermarkView setImage:image];
-    WATERMARK = image;
 }
 -(CGImageRef)NS2CG:(NSImage*)image{
     NSData *data = [image TIFFRepresentation];
@@ -81,39 +75,54 @@ NSImage *RESULT = nil;
     [image unlockFocus];
     return image;
 }
--(void)generateResult{
+-(NSImage*)generateResultWithPicture:(NSImage*)picture AndWatermark:(NSImage*)watermark{
     //这一段内存泄漏特别严重，我都快趋势了 2021.10.30
     //尝试用Swift重构 2021.12.03
     ViewController *c = [ViewController new];
-    NSImage *picture = PICTURE;
-    NSImage *watermark = WATERMARK;
     CGImageRef CGpicture = [c NS2CG:picture];
     CGImageRef CGwatermark = [c NS2CG:watermark];
-    CGContextRef context = CGBitmapContextCreate(nil, picture.size.width, picture.size.height, 8, 0, CGColorSpaceCreateDeviceRGB(), kCGImageAlphaPremultipliedFirst);
+    CGContextRef context = CGBitmapContextCreate(nil,picture.size.width, picture.size.height, 8, 0, CGColorSpaceCreateDeviceRGB(), kCGImageAlphaPremultipliedFirst);
     CGContextDrawImage(context, CGRectMake(0, 0, picture.size.width, picture.size.height), CGpicture);
     CGContextDrawImage(context, CGRectMake(0, 0, watermark.size.width, watermark.size.height), CGwatermark);
-    CGImageRef CGImage = CGBitmapContextCreateImage(context);
-    NSImage *image = [c CG2NS:CGImage];
-    RESULT = image;
+    return [c CG2NS:CGBitmapContextCreateImage(context)];
+}
+-(NSImage*)genResNewWithPicture:(NSImage*)picture AndWatermark:(NSImage*)watermark{
+    NSBitmapImageRep *watermarkRep = [[NSBitmapImageRep alloc] initWithData:[watermark TIFFRepresentation]];
+    [picture lockFocus];
+    [watermarkRep drawInRect:NSMakeRect(0, 0, watermark.size.width, watermark.size.height)];
+    [picture unlockFocus];
+    return picture;
+    //2021.12.18 WDNMD两个月心血居然用4行代码就能实现，还TM不用内存管理
 }
 -(void)displayResult{
     ViewController *c = [ViewController new];
     ViewControllerSwift *s = [ViewControllerSwift new];
+    NSImage *image;
     switch (_renderer.integerValue) {
         case 0:{
-            [c generateResult];
+            image = [c generateResultWithPicture:[_pictureView image] AndWatermark:[_watermarkView image]];
             break;
         }
         case 1:{
-            NSImage *image = [s generateResultSwiftWithPicture:PICTURE watermark:WATERMARK];
-            RESULT = image;
+            image = [s generateResultSwiftWithPicture:[_pictureView image] watermark:[_watermarkView image]];
+            NSImageRep *imageRep = [image bestRepresentationForRect:NSMakeRect(0, 0, _pictureView.image.size.width, _pictureView.image.size.height) context:nil hints:nil];
+            NSImage *tempImage = [[NSImage alloc] initWithSize:NSMakeSize(_pictureView.image.size.width, _pictureView.image.size.height)];
+            [tempImage lockFocus];
+            [imageRep drawInRect:NSMakeRect(0, 0, _pictureView.image.size.width, _pictureView.image.size.height)];
+            [tempImage unlockFocus];
+            image = tempImage;
+            break;
+        }
+        case 2:{
+            image = [c genResNewWithPicture:[_pictureView image] AndWatermark:[_watermarkView image]];
             break;
         }
         default:{
-            NSLog(@"Attention! An error was occured when reading the renderer options.");
+            NSLog(@"Attention! An error was occured while reading the renderer options.");
+            break;
         }
     }
-    [_resultView setImage:RESULT];
+    [_resultView setImage:image];
 }
 -(void)saveResult{
     NSSavePanel *panel = [NSSavePanel savePanel];
@@ -125,9 +134,8 @@ NSImage *RESULT = nil;
     [panel setPrompt:@"张熙嘉"];
     [panel runModal];
         if (panel) {
-            NSImage *resultImage = RESULT;
-            NSURL *url = [panel URL];
-            [[resultImage TIFFRepresentation] writeToURL:url atomically:YES];
+            NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:[[_resultView image] TIFFRepresentation]];
+            [[imageRep representationUsingType:NSPNGFileType properties:[[NSDictionary alloc] init]] writeToURL:[panel URL] atomically:YES];
         }
 }
 

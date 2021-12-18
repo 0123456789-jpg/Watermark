@@ -757,13 +757,14 @@
                                 </buttonCell>
                             </button>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dp-O2-aSh">
-                                <rect key="frame" x="18" y="17" width="70" height="24"/>
+                                <rect key="frame" x="18" y="17" width="156" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="qfW-nr-wi1">
                                     <font key="font" metaFont="system"/>
                                     <segments>
                                         <segment label="C"/>
-                                        <segment label="Swift" selected="YES" tag="1"/>
+                                        <segment label="Swift" tag="1"/>
+                                        <segment label="Objective-C" selected="YES"/>
                                     </segments>
                                 </segmentedCell>
                             </segmentedControl>
