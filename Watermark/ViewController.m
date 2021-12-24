@@ -10,21 +10,22 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
     _picture.target = self;
     [_picture setAction:@selector(displayPicture)];
-    _picture.target = self;
+    _watermark.target = self;
     [_watermark setAction:@selector(displayWatermark)];
     _generate.target = self;
     [_generate setAction:@selector(displayResult)];
     _save.target = self;
     [_save setAction:@selector(saveResult)];
+    [_save setEnabled:NO];
     }
 
-- (void)setRepresentedObject:(id)representedObject {
+-(void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
@@ -50,11 +51,13 @@
     ViewController *c = [ViewController new];
     NSImage *image = [c getFile];
     [_pictureView setImage:image];
+    [_save setEnabled:NO];
 }
 -(void)displayWatermark{
     ViewController *c = [ViewController new];
     NSImage *image = [c getFile];
     [_watermarkView setImage:image];
+    [_save setEnabled:NO];
 }
 -(CGImageRef)NS2CG:(NSImage*)image{
     NSData *data = [image TIFFRepresentation];
@@ -123,6 +126,7 @@
         }
     }
     [_resultView setImage:image];
+    [_save setEnabled:YES];
 }
 -(void)saveResult{
     NSSavePanel *panel = [NSSavePanel savePanel];

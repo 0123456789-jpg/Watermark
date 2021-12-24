@@ -12,7 +12,7 @@
 		631AA18B2722F639006A89C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA18A2722F639006A89C8 /* ViewController.m */; };
 		631AA18D2722F639006A89C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631AA18C2722F639006A89C8 /* Assets.xcassets */; };
 		631AA1932722F639006A89C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 631AA1922722F639006A89C8 /* main.m */; };
-		636931F12724376E00F11312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636931F02724376D00F11312 /* Main.storyboard */; };
+		63AB185F2775E382000EFA2C /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63AB185E2775E382000EFA2C /* Main.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		631AA1912722F639006A89C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631AA1922722F639006A89C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		631AA1942722F639006A89C8 /* Watermark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watermark.entitlements; sourceTree = "<group>"; };
-		636931F02724376D00F11312 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		63AB185E2775E382000EFA2C /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Main.xib; path = ../../../Main.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 				631AA18A2722F639006A89C8 /* ViewController.m */,
 				63189D4F275A414500CBCE2A /* Generator.swift */,
 				631AA18C2722F639006A89C8 /* Assets.xcassets */,
-				636931F02724376D00F11312 /* Main.storyboard */,
+				63AB185E2775E382000EFA2C /* Main.xib */,
 				631AA1912722F639006A89C8 /* Info.plist */,
 				631AA1922722F639006A89C8 /* main.m */,
 				631AA1942722F639006A89C8 /* Watermark.entitlements */,
@@ -133,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631AA18D2722F639006A89C8 /* Assets.xcassets in Resources */,
-				636931F12724376E00F11312 /* Main.storyboard in Resources */,
+				63AB185F2775E382000EFA2C /* Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +274,7 @@
 				CODE_SIGN_ENTITLEMENTS = Watermark/Watermark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4Y4T5YP7F2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Watermark/Info.plist;
@@ -282,8 +282,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Watermark/Watermark-Bridging-Header.h";
@@ -301,7 +301,7 @@
 				CODE_SIGN_ENTITLEMENTS = Watermark/Watermark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4Y4T5YP7F2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Watermark/Info.plist;
@@ -309,8 +309,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.c191239.Watermark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Watermark/Watermark-Bridging-Header.h";
